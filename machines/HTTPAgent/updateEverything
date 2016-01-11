@@ -1,0 +1,4 @@
+#!/bin/bash
+
+bash ~/updateHTTPAgent
+bash ~/updateImperialDC

@@ -1,0 +1,16 @@
+#!/bin/bash
+
+cd
+
+VERS="2.13"
+PLUGINVERS="1.2.1"
+
+rm -rf apache-jmeter*
+curl "http://mirror.nohup.it/apache//jmeter/binaries/apache-jmeter-$VERS.tgz" -O
+tar -zxf apache-jmeter-$VERS.tgz
+
+rm -rf JMeterPlugins-Standard*
+curl "http://jmeter-plugins.org/downloads/file/JMeterPlugins-Standard-$PLUGINVERS.zip" -O -L
+unzip -q JMeterPlugins-Standard-$PLUGINVERS.zip -d JMeterPlugins-Standard-$PLUGINVERS
+
+cp JMeterPlugins-Standard-$PLUGINVERS/lib/ext/JMeterPlugins-Standard.jar apache-jmeter-$VERS/lib/ext/
