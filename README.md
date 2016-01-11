@@ -10,8 +10,8 @@ It provides a Vagrant file to easily set up two virtual machines, one running th
 You can run the following command to perform the machines set up.
 
     git clone https://github.com/MicheleGuerriero/httpAgent-JMeter4Vagrant.git
-cd httpAgent-JMeter4Vagrant
-vagrant up    
+    cd httpAgent-JMeter4Vagrant
+    vagrant up    
 
 
 In the following we are going to explain how to run the default JMeter test.
