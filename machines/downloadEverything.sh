@@ -7,8 +7,8 @@ then
     exit -1
 fi
 
-BASE="https://raw.githubusercontent.com/deib-polimi/modaclouds-tests/master/machines/$1"
-FOLDER="https://github.com/deib-polimi/modaclouds-tests/tree/master/machines/$1"
+BASE="https://raw.githubusercontent.com/MicheleGuerriero/httpAgent-JMeter4Vagrant/master/machines/$1"
+FOLDER="https://github.com/MicheleGuerriero/httpAgent-JMeter4Vagrant/tree/master/machines/$1"
 THIS_FILE="downloadEverything.sh"
 
 i=0
