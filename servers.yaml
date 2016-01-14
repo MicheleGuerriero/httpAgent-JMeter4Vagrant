@@ -4,9 +4,6 @@
   ram: 1024
   cpus: 2
   ip: 10.10.10.100
-  forwarded_ports:
-   - guest: 8080
-     host: 8176
   shell:
     - cd ~ 
     - mkdir test/
@@ -25,7 +22,7 @@
      host: 8080
   shell:
     - cd ~ 
-    - curl -O https://raw.githubusercontent.com/MicheleGuerriero/httpAgent-JMeter4Vagrant/master/machines/downloadEverything.sh 
+    - curl -O https://raw.githubusercontent.com/MicheleGuerriero/httpAgent-JMeter4Vagrant/master/machines/downloadEverything.sh
     - bash downloadEverything.sh HTTPAgent
     - sudo bash installHTTPAgent
     - sudo bash startHTTPAgent

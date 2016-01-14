@@ -7,7 +7,7 @@ for running a simple performance test over a web service.
 
 It provides a Vagrant file to easily set up two virtual machines, one running the client (JMeter) and one for the server [HTTPAgent].
 
-You can run the following command to perform the machines set up.
+Make sure you have Vagrant and VirtualBox installed (). After that you can run the following command to perform the machines set up.
 
     git clone https://github.com/MicheleGuerriero/httpAgent-JMeter4Vagrant.git
     cd httpAgent-JMeter4Vagrant
@@ -17,4 +17,17 @@ You can run the following command to perform the machines set up.
 In the following we are going to explain how to run the default JMeter test.
 
 # Running the test
+
+The HTTPAgent is already up and running and you can contact it browsing to http://10.10.10.101:8080/http-agent-helper-0.1/getRandomPage.
+From the project directory you can log in into the JMeter machine, configure the load to consider during the test and start the test. In order to login into the JMeter machine you can run the following command:
+
+    vagrant ssh httpagent
+
+Once you are logged in, configure the test.txt file in the home directory (/home/vagrant/) with the desired workload. The test.txt file takes is a space separated list of pairs, each pair representing the number of simultaneous users to simulate and the simulation period. An example of the test.txt content is the following:
+
+    100 300
+    200 300
+    500 300
+
+
 
