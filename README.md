@@ -29,5 +29,16 @@ Once you are logged in, configure the test.txt file in the home directory (/home
     200 300
     500 300
 
+Once the test.txt file is configure you can run the jmetertemplatefiller-0.0.1-SNAPSHOT.jar java artifact you can find in the home directory in order to generare from the jmeterTestTemplate-HTTPAgent.jmx (always in the home directory) a real consumable .jmx file. This will be output in the test folder under the home directory. In oder to do so you cans simply run:
+
+    java -jar jmetertemplatefiller-0.0.1-SNAPSHOT.jar
+
+The last step is to run jmeter with the test generated at the previous step. In order to do so you can run the following:
+
+cd ~/apache-jmeter-2.13/bin
+./jmeter -n -t ~/test/jmeterTest-HTTPAgent.jmx
+
+
+The graphes and tables output of the test are store in the /home/vagrant/test directory.
 
 
