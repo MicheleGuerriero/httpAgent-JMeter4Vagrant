@@ -9,6 +9,8 @@
      host: 8176
   shell:
     - cd ~ 
+    - mkdir test/
+    - touch test.txt
     - curl -O https://raw.githubusercontent.com/MicheleGuerriero/httpAgent-JMeter4Vagrant/master/machines/downloadEverything.sh 
     - bash downloadEverything.sh client
     - bash installEverything
@@ -17,9 +19,6 @@
   ram: 1024
   cpus: 2
   ip: 10.10.10.100
-  forwarded_ports:
-   - guest: 8080
-     host: 8080
   shell:
     - cd ~ 
     - curl -O https://raw.githubusercontent.com/MicheleGuerriero/httpAgent-JMeter4Vagrant/master/machines/downloadEverything.sh 
