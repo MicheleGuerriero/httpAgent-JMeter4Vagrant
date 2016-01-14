@@ -13,7 +13,7 @@ Make sure you have Vagrant and VirtualBox installed (). After that you can run t
     cd httpAgent-JMeter4Vagrant
     vagrant up    
 
-
+Note that the two virtual machines are by default configured to use 1024 MB of RAM and 1 core. It is easy to change this parameters by editing the server.yaml file which carries the configuration of the two virtual machines.
 In the following we are going to explain how to run the default JMeter test.
 
 # Running the test
@@ -35,10 +35,10 @@ Once the test.txt file is configure you can run the jmetertemplatefiller-0.0.1-S
 
 The last step is to run jmeter with the test generated at the previous step. In order to do so you can run the following:
 
-cd ~/apache-jmeter-2.13/bin
-./jmeter -n -t ~/test/jmeterTest-HTTPAgent.jmx
+    cd ~/apache-jmeter-2.13/bin
+    ./jmeter -n -t ~/test/jmeterTest-HTTPAgent.jmx
 
 
-The graphes and tables output of the test are store in the /home/vagrant/test directory.
+The graphes and tables output of the test are store in the /home/vagrant/test directory of the jmeter machine.
 
 

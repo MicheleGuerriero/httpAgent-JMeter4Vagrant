@@ -2,7 +2,7 @@
 - name: jmeter
   box: ubuntu/trusty64
   ram: 1024
-  cpus: 2
+  cpus: 1
   ip: 10.10.10.100
   shell:
     - cd ~ 
@@ -15,7 +15,7 @@
 - name: httpagent
   box: ubuntu/trusty64
   ram: 1024
-  cpus: 2
+  cpus: 1
   ip: 10.10.10.101
   forwarded_ports:
    - guest: 8080
