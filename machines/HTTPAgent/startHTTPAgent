@@ -1,7 +1,1 @@
-#!/bin/bash
-
-source ~/.bashrc_httpagent
-
-bash ~/stopHTTPAgent
-
-bash ~/http-agent-helper/startTomcat.sh
+sudo service tomcat7 restart

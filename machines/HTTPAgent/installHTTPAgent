@@ -5,7 +5,7 @@ cd
 TESTS_DIST_LOCATION="https://github.com/deib-polimi/modaclouds-tests.git"
 TESTS_DIST_BRANCH="master"
 
-source ~/.bashrc_httpagent
+touch ~/.bashrc_httpagent
 
 sudo apt-get update -y
 # sudo DEBIAN_FRONTEND=noninteractive apt-get -y -o Dpkg::Options::="--force-confdef" -o Dpkg::Options::="--force-confold" upgrade
@@ -25,36 +25,13 @@ sudo apt-get install default-jre default-jdk -q -y
 export JAVA_HOME=/usr/lib/jvm/default-java
 echo "export JAVA_HOME=/usr/lib/jvm/default-java" >> ~/.bashrc_httpagent
 
-wget -qO- https://get.docker.com/ | sh
-
 cd
 sudo rm -rf modaclouds-tests
 git clone $TESTS_DIST_LOCATION -b $TESTS_DIST_BRANCH
 cd modaclouds-tests/http-agent-helper
 mvn clean package -DskipTests -U
-rm -rf ~/http-agent-helper*
-cp target/http-agent-helper*.tar.gz ~/http-agent-helper.tar.gz
-cd
-tar zxf http-agent-helper.tar.gz
-mv http-agent-helper-* http-agent-helper
 
-cd
-rm -rf modaclouds
-tar zxf modaclouds.tar.gz
-cd ~/modaclouds
-mv httpagent.docker httpagent-orig.docker
-mv httpAgentRun.sh httpAgentRun-orig.sh
-cp ~/http-agent-helper/httpagent.docker .
-cp ~/http-agent-helper/httpAgentRun.sh .
-cp ~/http-agent-helper/http-agent-helper.war .
-chmod +x httpAgentRun.sh
-
-cd ~/http-agent-helper
-bash stopTomcat.sh
-
-cd ~/modaclouds
-sudo docker rm `sudo docker ps -a | grep httpagent16 | awk '{print $1}'`
-sudo ./build.sh httpagent 16
-
-source ~/.bashrc_httpagent
-cd
+sudo apt-get install -y tomcat7
+cd target
+cp /var/lib/tomcat7/webapps
+http-agent-helper-0.1.war

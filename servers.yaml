@@ -6,10 +6,10 @@
   ip: 10.10.10.100
   forwarded_ports:
    - guest: 8080
-     host: 8080
+     host: 8176
   shell:
     - cd ~ 
-    - curl -O https://raw.githubusercontent.com/deib-polimi/modaclouds-tests/master/machines/downloadEverything.sh 
+    - curl -O https://raw.githubusercontent.com/MicheleGuerriero/httpAgent-JMeter4Vagrant/master/machines/downloadEverything.sh 
     - bash downloadEverything.sh client
     - bash installEverything
 - name: httpagent
@@ -22,8 +22,8 @@
      host: 8080
   shell:
     - cd ~ 
-    - curl -O https://raw.githubusercontent.com/deib-polimi/modaclouds-tests/master/machines/downloadEverything.sh 
+    - curl -O https://raw.githubusercontent.com/MicheleGuerriero/httpAgent-JMeter4Vagrant/master/machines/downloadEverything.sh 
     - bash downloadEverything.sh HTTPAgent
-    - bash installEverything
-    - sudo bash startHTTPAgent %2$s %3$s
+    - sudo bash installHTTPAgent
+    - sudo bash startHTTPAgent
 ...

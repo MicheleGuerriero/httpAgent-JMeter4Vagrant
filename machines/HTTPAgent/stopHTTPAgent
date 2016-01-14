@@ -1,5 +1,4 @@
 #!/bin/bash
 
-bash ~/http-agent-helper/stopTomcat.sh
-
+sudo service tomcat stop
 
