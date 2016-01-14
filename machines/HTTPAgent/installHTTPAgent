@@ -25,6 +25,8 @@ sudo apt-get install default-jre default-jdk -q -y
 export JAVA_HOME=/usr/lib/jvm/default-java
 echo "export JAVA_HOME=/usr/lib/jvm/default-java" >> ~/.bashrc_httpagent
 
+source ~/.bashrc_httpagent
+
 cd
 sudo rm -rf modaclouds-tests
 git clone $TESTS_DIST_LOCATION -b $TESTS_DIST_BRANCH

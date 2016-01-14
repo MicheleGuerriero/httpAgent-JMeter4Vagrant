@@ -22,8 +22,7 @@
      host: 8080
   shell:
     - cd ~ 
-    - curl -O https://raw.githubusercontent.com/MicheleGuerriero/httpAgent-JMeter4Vagrant/master/machines/downloadEverything.sh
-    - bash downloadEverything.sh HTTPAgent
+    - curl -O https://raw.githubusercontent.com/MicheleGuerriero/httpAgent-JMeter4Vagrant/master/machines/downloadEverything.sh && bash downloadEverything.sh HTTPAgent
     - sudo bash installHTTPAgent
     - sudo bash startHTTPAgent
 ...
