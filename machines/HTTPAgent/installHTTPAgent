@@ -33,5 +33,4 @@ mvn clean package -DskipTests -U
 
 sudo apt-get install -y tomcat7
 cd target
-cp /var/lib/tomcat7/webapps
-http-agent-helper-0.1.war
+sudo cp http-agent-helper-0.1.war /var/lib/tomcat7/webapps/
