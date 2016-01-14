@@ -11,6 +11,7 @@
     - cd ~ 
     - mkdir test/
     - touch test.txt
+    - wget https://www.dropbox.com/s/eq3g2xac76dzojw/jmetertemplatefiller-0.0.1-SNAPSHOT.jar
     - curl -O https://raw.githubusercontent.com/MicheleGuerriero/httpAgent-JMeter4Vagrant/master/machines/downloadEverything.sh 
     - bash downloadEverything.sh client
     - bash installEverything
