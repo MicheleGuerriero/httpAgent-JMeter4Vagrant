@@ -12,25 +12,14 @@ sudo apt-get update -y
 # sudo DEBIAN_FRONTEND=noninteractive apt-get -y -o Dpkg::Options::="--force-confdef" -o Dpkg::Options::="--force-confold" dist-upgrade
 sudo apt-get install build-essential -y
 
-sudo apt-get install maven git -y
-
-export M2_HOME=/usr/share/maven
-echo "export M2_HOME=/usr/share/maven" >> ~/.bashrc_httpagent
-export M2=$M2_HOME/bin
-echo "export M2=\$M2_HOME/bin" >> ~/.bashrc_httpagent
-export PATH=$M2:$PATH
-echo "export PATH=\$M2:\$PATH" >> ~/.bashrc_httpagent
-
 sudo apt-get install default-jre default-jdk -q -y
 export JAVA_HOME=/usr/lib/jvm/default-java
 echo "export JAVA_HOME=/usr/lib/jvm/default-java" >> ~/.bashrc_httpagent
 
+source ~/.bashrc_httpagent
+
 cd
-sudo rm -rf modaclouds-tests
-git clone $TESTS_DIST_LOCATION -b $TESTS_DIST_BRANCH
-cd modaclouds-tests/http-agent-helper
-mvn clean package -DskipTests -U
+wget https://www.dropbox.com/s/tg0pacw4zip6d6u/http-agent-helper-0.1.war
 
 sudo apt-get install -y tomcat7
-cd target
-sudo cp http-agent-helper-0.1.war /var/lib/tomcat7/webapps/
+sudo cp ~/http-agent-helper-0.1.war /var/lib/tomcat7/webapps/
