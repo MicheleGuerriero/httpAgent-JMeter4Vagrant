@@ -7,7 +7,7 @@ for running a simple performance test over a web service.
 
 It provides a Vagrant file to easily set up two virtual machines, one running the client (JMeter) and one for the server [HTTPAgent].
 
-Make sure you have Vagrant and VirtualBox installed (). After that you can run the following command to perform the machines set up.
+Make sure you have Vagrant and VirtualBox installed (https://docs.vagrantup.com/v2/getting-started/). After that you can run the following command to perform the machines set up.
 
     git clone https://github.com/MicheleGuerriero/httpAgent-JMeter4Vagrant.git
     cd httpAgent-JMeter4Vagrant
@@ -39,6 +39,6 @@ The last step is to run jmeter with the test generated at the previous step. In 
     ./jmeter -n -t ~/test/jmeterTest-HTTPAgent.jmx
 
 
-The graphes and tables output of the test are store in the /home/vagrant/test directory of the jmeter machine.
+The graphs and tables output of the test are store in the /home/vagrant/test directory of the jmeter machine.
 
 
